@@ -1,10 +1,7 @@
 const userInputText = document.getElementById("text-input");
 const checkBtn = document.getElementById("check-btn");
 const resultDiv = document.getElementById("result");
-const definitionTarget = document.getElementById("definition-target");
-const definitionDiv = document.getElementById("definition-div");
 const resultText = document.getElementById("result-text");
-const closeBtn = document.getElementById("close-btn");
 
 const palindromeCheck = str => {
     const userInputStr = str;
