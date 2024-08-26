@@ -36,11 +36,6 @@ body {
     font-weight: bolder;
 }
 
-.definition-target:hover {
-    text-decoration: underline;
-    cursor: pointer;
-}
-
 .input-div {
     max-width: 450px;
     min-height: 100px;
@@ -75,25 +70,6 @@ label {
     padding: 5px;
     color: var(--white);
     background-color: var(--orange);
-    cursor: pointer;
-}
-
-.definition-div {
-    max-width: 450px;
-    border-radius: 15px;
-    padding: 20px;
-    margin-bottom: 20px;
-    color: var(--white);
-    background-color: var(--light_gray);
-    box-shadow: 5px 5px 3px black;
-    font-size: 20px;
-    display: flex;
-    flex-direction: row;
-}
-
-#close-btn {
-    position: relative;
-    margin: -9px;
     cursor: pointer;
 }
 
