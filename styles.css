@@ -39,8 +39,8 @@ body {
 }
 
 .phone-div {
-    max-width: 350px;
-    min-height: 100px;
+    width: 275px;
+    height: 475px;
     border-radius: 15px;
     display: flex;
     align-items: center;
@@ -50,6 +50,33 @@ body {
     background-color: var(--blue);
     box-shadow: 5px 5px 3px black;
     font-size: 20px;
+}
+
+.phone-screen-div {
+    border-radius: 5px;
+    width: 240px;
+    height: 400px;
+    justify-content: center;
+    background-color: var(--light_gray);
+    margin-bottom: 10px;
+}
+
+.phone-top-border {
+    margin: 0 auto;
+    height: 0;
+    width: 40px;
+    border-radius: 0 0 30px 30px;
+    border-top: 25px solid var(--blue);
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+}
+
+.phone-camera {
+    margin: -22px auto 0 auto;
+    height: 15px;
+    width: 15px;
+    border-radius: 20px;
+    background-color: black;
 }
 
 label {
@@ -75,6 +102,7 @@ label {
     background-color: var(--orange);
     cursor: pointer;
     width: 90px;
+    margin: 0 10px;
 }
 
 .hidden {
