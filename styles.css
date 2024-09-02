@@ -105,6 +105,20 @@ label {
     margin: 0 10px;
 }
 
-.hidden {
-    display: none;
+.results-div {
+    height: 300px;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.result-text {
+    margin: 0 0 10px 0;
+}
+
+.valid {
+    color: var(--orange)
+}
+
+.invalid {
+    color: var(--gray);
 }
