@@ -1,38 +1,37 @@
-const userInputText = document.getElementById("text-input");
+const userInput = document.getElementById("user-input");
 const checkBtn = document.getElementById("check-btn");
+const clearBtn = document.getElementById("clear-btn")
 const resultDiv = document.getElementById("result");
-const resultText = document.getElementById("result-text");
 
-const palindromeCheck = str => {
-    const userInputStr = str;
+const validPhoneNumCheck = input => {
+    const userInput = input;
 
-    if (str === "") {
-        alert("Please input a value");
+    if (userInput === "") {
+        alert("Please provide a phone number");
         return;
     }
 
-    const compareStr = str.replace(/[^a-z0-9]/gi, "").toLowerCase();
-    console.log(compareStr)
-    let results = "";
-    if (compareStr === [...compareStr].reverse().join("")) {
-        results = `<bold>${userInputStr}</bold> is a palindrome.`
-    } else {
-        results = `<bold>${userInputStr}</bold> is not a palindrome.`
-    }
+    const phoneNumberRegex = `^(1\\s?)?(\\[0-9]{3}\\)|[0-9]{3})[\\s\\-]?[0-9]{3}[\\s\\-]?[0-9]{4}$`;
 
-    resultText.innerHTML = results;
-    resultDiv.classList.remove("hidden");
+    const resultText = document.createElement("p");
+    resultText.className = "results";
+    resultText.appendChild(document.createTextNode(`${phoneNumberRegex.test(userInput) ? "Valid" : "Invalid"} US number: ${userInput} `));
+    resultDiv.appendChild(resultText);
 }
 
-definitionTarget.addEventListener("click", () => {
-    definitionDiv.classList.contains("hidden") ? definitionDiv.classList.remove("hidden") : definitionDiv.classList.add("hidden");
-});
-
-closeBtn.addEventListener("click", () => {
-    definitionDiv.classList.contains("hidden") ? definitionDiv.classList.remove("hidden") : definitionDiv.classList.add("hidden");
+checkBtn.addEventListener("click", () => {
+    validPhoneNumCheck(userInput.value);
+    userInput.value = "";
 })
 
-checkBtn.addEventListener("click", () => {
-    palindromeCheck(userInputText.value);
-    userInputText.value = "";
+userInput.addEventListener("keydown", event => {
+    if (event.key === "Enter") {
+        validPhoneNumCheck(userInput.value);
+        userInput.value = "";
+    }
+})
+
+clearBtn.addEventListener("click", () => {
+    userInput.value = "";
+    resultDiv.innerHTML = "";
 })
